@@ -53,8 +53,8 @@
                             <td class="text-capitalize"><?= $row["city"]; ?></td>
                             <td class="text-capitalize"><?= $row["state"]; ?></td>
                             <td>
-                                <a href="update.php?id=<?= $row['id']; ?>" class="btn btn-primary"><i class="far fa-edit"></i> Update</a>&nbsp;
-                                <a href="delete.php?id=<?= $row["id"]; ?>" class=" btn btn-danger" onclick="return checkDelete();"><i class="far fa-trash-alt"></i> Delete</a>
+                                <a href="update.php?id=<?= $row['idStudent']; ?>" class="btn btn-primary"><i class="far fa-edit"></i> Update</a>&nbsp;
+                                <a href="delete.php?id=<?= $row["idStudent"]; ?>" class=" btn btn-danger" onclick="return checkDelete();"><i class="far fa-trash-alt"></i> Delete</a>
                             </td>
                         </tr>
                 <?php
