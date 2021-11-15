@@ -7,9 +7,9 @@ $fnameErr = $lnameErr = $emailErr = $courseErr = $batchErr = $cityErr = $stateEr
 $fname = $lname = $email = $course = $batch = $city = $state = "";
 
 // processing form data when form is submit
-if (isset($_POST["id"]) && !empty($_POST["id"])) {
+if (isset($_POST["idStudent"]) && !empty($_POST["idStudent"])) {
     // get hidden id input value
-    $id = $_POST["id"];
+    $id = $_POST["idStudent"];
 
     if (empty($_POST["fname"])) {
         $fnameErr = "*This field is required";
@@ -91,12 +91,12 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     mysqli_close($conn);
 } else {
     // check if url contain id, if not redirect to index page
-    if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
+    if (isset($_GET["idStudent"]) && !empty(trim($_GET["idStudent"]))) {
         // get id from url
-        $id = trim($_GET["id"]);
+        $id = trim($_GET["idStudent"]);
 
         // retrieve record associated with id
-        $sql = "SELECT * FROM students WHERE id = '$id'";
+        $sql = "SELECT * FROM students WHERE idStudent = '$id'";
         $result = mysqli_query($conn, $sql);
         $record = mysqli_num_rows($result);
 
