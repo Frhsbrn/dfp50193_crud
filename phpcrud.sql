@@ -43,16 +43,9 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`idStudent`, `firstname`, `lastname`, `email`, `course`, `batch`, `city`, `state`) VALUES
-(1, 'ashish', 'raturi', 'ashishraturi@gmail.com', 'bca', 2013, 'dehradun', 'uttarakhand'),
-(2, 'sumit', 'arora', 'sumitarora@gmail.com', 'bca', 2013, 'ludhiana', 'punjab'),
-(3, 'raghav', 'gupta', 'raghavgupta@gmail.com', 'bca', 2014, 'jalandhar', 'punjab'),
-(4, 'vinita', 'kansal', 'vinitakansal@gmail.com', 'mca', 2015, 'gurugram', 'haryana'),
-(18, 'tanya', 'bansal', 'tanyabansal@gmail.com', 'pgdca', 2017, 'ludhiana', 'punjab'),
-(24, 'jagdeep', 'sehgal', 'js8995@yahoo.com', 'bca', 2016, 'mohali', 'punjab'),
-(27, 'arzoo', 'mehta', 'arzoomehta@yahoo.com', 'pgdca', 2018, 'ambala', 'haryana'),
-(28, 'bhumika', 'mishra', 'bm7894@yahoo.com', 'pgdca', 2021, 'dehradun', 'uttarakhand'),
-(31, 'keshav', 'yadav', 'ky21594@yahoo.com', 'mca', 2020, 'patna', 'bihar'),
-(32, 'surinder', 'chawla', 'surinder.c94@gmail.com', 'mca', 2019, 'patiala', 'punjab');
+(1, 'farah', 'sabrina', 'sabrinafarah01@gmail.com', 'ddt', 2021, 'ipoh', 'perak'),
+(2, 'sarah', 'diana', 'akifahnailah95@gmail.com', 'ddt', 2021, 'ipoh', 'perak'),
+
 
 --
 -- Indexes for dumped tables
