@@ -10,7 +10,7 @@ if (isset($_POST['update'])) {
 	// AMBIL NAMA FILE FOTO SEBELUMNYA
 	$data = mysqli_query($mysqli, "SELECT gambar FROM users WHERE id='$id'");
 	$dataImage = mysqli_fetch_assoc($data);
-	$oldImage = $dataImage['gambar'];
+
 
 	// AMBIL DATA DATA DIDALAM INPUT
 	$nama = mysqli_real_escape_string($mysqli, $_POST['nama']);
@@ -95,11 +95,6 @@ while ($res = mysqli_fetch_array($result)) {
 				<tr>
 					<td>Email</td>
 					<td><input type="text" name="email" value="<?php echo $email; ?>"></td>
-				</tr>
-				<tr>
-					<td>Gambar</td>
-					<td><img width="80" src="image/<?php echo $image ?>"></td>
-					<td><input type="file" name="newImage"></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" name="id" value=<?php echo $_GET['id']; ?>></td>
