@@ -1,12 +1,11 @@
 <html>
 
 <head>
-	<title>Tambah Data</title>
+	<title>ADD</title>
 </head>
 
 <body>
 	<?php
-	// INCLUDE KONEKSI KE DATABASE
 	include_once("config.php");
 
 	if (isset($_POST['Submit'])) {
@@ -14,33 +13,26 @@
 		$umur = mysqli_real_escape_string($mysqli, $_POST['umur']);
 		$email = mysqli_real_escape_string($mysqli, $_POST['email']);
 		
-		// CEK DATA TIDAK BOLEH KOSONG
 		if (empty($nama) || empty($umur) || empty($email)) {
 
 			if (empty($nama)) {
-				echo "<font color='red'>Kolom Nama tidak boleh kosong.</font><br/>";
+				echo "<font color='red'>NAME NOT RECEIVE!.</font><br/>";
 			}
 
 			if (empty($umur)) {
-				echo "<font color='red'>Kolom Umur tidak boleh kosong.</font><br/>";
+				echo "<font color='red'>AGE NOT RECEIVE!.</font><br/>";
 			}
 
 			if (empty($email)) {
-				echo "<font color='red'>Kolom Email tidak boleh kosong.</font><br/>";
+				echo "<font color='red'>EMAIL NOT RECEIVE!.</font><br/>";
 			}
-
-			// KEMBALI KE HALAMAN SEBELUMNYA
-			echo "<br/><a href='javascript:self.history.back();'>Kembali</a>";
+			echo "<br/><a href='javascript:self.history.back();'>HOME</a>";
 		} else {
 			
 			
-
-			// MEMASUKAN DATA DATA + NAMA GAMBAR KE DALAM DATABASE
 			$result = mysqli_query($mysqli, "INSERT INTO users(nama,umur,email) VALUES('$nama', '$umur', '$email')");
 
-			// MENAMPILKAN PESAN BERHASIL
-			echo "<font color='green'>Data Berhasil ditambahkan.";
-			echo "<br/><a href='index.php'>Lihat Hasilnya</a>";
+			echo "<br/><a href='index.php'>HOME</a>";
 		}
 	}
 	?>
