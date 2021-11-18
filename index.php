@@ -22,7 +22,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 				<td>Nama</td>
 				<td>Umur</td>
 				<td>Email</td>
-				<td>Gambar</td>
 				<td>Update</td>
 			</tr>
 			<?php
@@ -32,7 +31,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 				echo "<td>" . $res['nama'] . "</td>";
 				echo "<td>" . $res['umur'] . "</td>";
 				echo "<td>" . $res['email'] . "</td>";
-				echo "<td><img width='80' src='image/" . $res['gambar'] . "'</td>";
 				echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Kamu yakin untuk delete ini?')\">Delete</a></td>";
 			}
 			?>
