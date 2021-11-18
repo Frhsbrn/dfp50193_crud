@@ -1,33 +1,43 @@
 <?php
-// Create database connection using config file
+// INCLUDE KONEKSI KE DATABASE
 include_once("config.php");
 
-// Fetch all users data from database
+// AMBIL DATA DARI DATABASE BERDASARKAN DATA TERAKHIR DI INPUT
 $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 ?>
 
 <html>
+
 <head>
-    <title>Homepage</title>
+	<title>Homepage</title>
 </head>
 
 <body>
-<a href="add.php">Add New User</a><br/><br/>
+	<center>
+		<a href="add.html">Tambah Data Baru</a><br /><br />
 
-    <table width='80%' border=1>
+		<table width='80%' border=0>
 
-    <tr>
-        <th>Name</th> <th>Mobile</th> <th>Email</th> <th>Update</th>
-    </tr>
-    <?php
-    while($user_data = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>".$user_data['name']."</td>";
-        echo "<td>".$user_data['mobile']."</td>";
-        echo "<td>".$user_data['email']."</td>";
-        echo "<td><a href='edit.php?id=$user_data[id]'>Edit</a> | <a href='delete.php?id=$user_data[id]'>Delete</a></td></tr>";
-    }
-    ?>
-    </table>
+			<tr bgcolor='#CCCCCC'>
+				<td>Nama</td>
+				<td>Umur</td>
+				<td>Email</td>
+				<td>Gambar</td>
+				<td>Update</td>
+			</tr>
+			<?php
+
+			while ($res = mysqli_fetch_array($result)) {
+				echo "<tr>";
+				echo "<td>" . $res['nama'] . "</td>";
+				echo "<td>" . $res['umur'] . "</td>";
+				echo "<td>" . $res['email'] . "</td>";
+				echo "<td><img width='80' src='image/" . $res['gambar'] . "'</td>";
+				echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Kamu yakin untuk delete ini?')\">Delete</a></td>";
+			}
+			?>
+		</table>
+	</center>
 </body>
+
 </html>
